@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chúc Mừng Sinh Nhật Thu Hiền</title>
+  <style>
+    body {
+      background: #ffffff;
+      text-align: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 40px;
+      margin: 0;
+    }
+
+    #cake-container svg {
+      width: 400px;
+      height: auto;
+      margin-bottom: 20px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .slide-container {
+      margin-top: 30px;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .slide-container.show {
+      opacity: 1;
+    }
+
+    .slide {
+      display: none;
+      transition: opacity 1s ease;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    .slide img {
+      width: 90%;
+      max-width: 900px;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .slide img:hover {
+      transform: scale(1.03);
+    }
+
+    .slide h2 {
+      margin-top: 15px;
+      opacity: 0;
+      animation: fadeInText 1s forwards;
+    }
+
+    @keyframes fadeInText {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    #greeting {
+      font-size: 24px;
+      margin-top: 40px;
+      color: #e91e63;
+      font-weight: 600;
+      line-height: 1.6;
+    }
+
+    #greeting .line {
+      opacity: 0;
+      animation: fadeInText 1s forwards;
+    }
+
+    #greeting .line:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    #greeting .line:nth-child(2) {
+      animation-delay: 1s;
+    }
+
+    #greeting .line:nth-child(3) {
+      animation-delay: 2s;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Bánh kem SVG -->
+<div id="cake-container">
+  <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#ff6ec4;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#7873f5;stop-opacity:1" />
+      </linearGradient>
+
+      <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+        <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#ff69b4" flood-opacity="0.8"/>
+        <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#7873f5" flood-opacity="0.6"/>
+      </filter>
+
+      <radialGradient id="sparkle" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="white" stop-opacity="0.8">
+          <animate attributeName="stop-opacity" values="0.8;0.1;0.8" dur="2s" repeatCount="indefinite"/>
+        </stop>
+        <stop offset="100%" stop-color="white" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+
+    <text x="200" y="100" text-anchor="middle" font-family="Cursive, Arial" font-size="32" fill="url(#grad1)" stroke="#ff69b4" stroke-width="1.5" font-weight="bold" filter="url(#glow)">
+      Happy Birthday
+    </text>
+
+    <text x="200" y="100" text-anchor="middle" font-family="Cursive, Arial" font-size="32" fill="url(#sparkle)" font-weight="bold" pointer-events="none">
+      Happy Birthday
+    </text>
+  </svg>
+</div>
+
+<!-- Text chào -->
+<div id="greeting" style="display:none;">
+  <div class="line">Hi!</div>
+  <div class="line">Chúc mừng sinh nhật!</div>
+  <div class="line">Nhìn lại quá trình trưởng thành chút nhé!</div>
+</div>
+
+<!-- Slideshow -->
+<div class="slide-container" id="slideshow" style="opacity: 0;">
+  <div class="slide active">
+    <img src="images/anh_1.jpg" alt="Ảnh 1" />
+    <h2>Năm nào đây không nhớ, nhưng mà tốn công tìm lại nên bỏ vô</h2>
+  </div>
+  <div class="slide">
+    <img src="images/anh_2.jpg" alt="Ảnh 2" />
+    <h2>Lớn hơn xíu rồi, k chèn chữ vô ảnh nữa</h2>
+  </div>
+  <div class="slide">
+    <img src="images/anh_3.jpg" alt="Ảnh 3" />
+    <h2>Đầu cấp 3 nè tr, xinh hơn rồi đó</h2>
+  </div>
+  <div class="slide">
+    <img src="images/anh_4.jpg" alt="Ảnh 4" />
+    <h2>Này cuối năm 12 rồi nè, có tình iu nên tươi hơn hẳn</h2>
+  </div>
+  <div class="slide">
+    <img src="images/anh_5.jpg" alt="Ảnh 5" />
+    <h2>Hình ảnh xinh đẹp năm 18 tủi nè</h2>
+  </div>
+  <div class="slide">
+    <img src="images/anh_6.jpg" alt="Ảnh 6" />
+    <h2>Và đây là lên đại học nè</h2>
+  </div>
+  <div class="slide">
+    <img src="images/anh_7.jpg" alt="Ảnh 7" />
+    <h2>Đi ăn đi chơi với bồ đồ đó</h2>
+  </div>
+  <div class="slide">
+    <img src="images/anh_8.jpg" alt="Ảnh 8" />
+    <h2></h2>
+  </div>
+  <div class="slide">
+    <img src="images/anh_9.jpg" alt="Ảnh 9" />
+    <h2></h2>
+  </div>
+  <div class="slide">
+    <img src="images/anh_10.jpg" alt="Ảnh 10" />
+    <h2>Này là bước sang tuổi 20</h2>
+  </div>
+  <div class="slide">
+    <img src="images/anh_11.jpg" alt="Ảnh 11" />
+    <h2></h2>
+  </div>
+  <div class="slide">
+    <img src="images/anh_12.jpg" alt="Ảnh 12" />
+    <h2>Ảnh duy nhất của 3 đứa</h2>
+  </div>
+  <div class="slide">
+    <h2 style="font-size: 24px; color: #e91e63; margin-top: 40px;">
+      Lời cuối thì 2 đứa t chúc m sinh nhật vui vẻ nhe 🎉
+    </h2>
+  </div>
+</div>
+
+<!-- Script điều khiển slideshow và animation -->
+<script>
+  // Hiển thị greeting sau 7s, sau đó chuyển sang slideshow sau 5s
+  setTimeout(() => {
+    document.getElementById('cake-container').style.display = 'none';
+    document.getElementById('greeting').style.display = 'block';
+
+    setTimeout(() => {
+      document.getElementById('greeting').style.display = 'none';
+      const slideshow = document.getElementById('slideshow');
+      slideshow.classList.add('show');
+      startSlideshow();
+    }, 2000);
+  }, 7000);
+
+  function startSlideshow() {
+    const slides = document.querySelectorAll('.slide');
+    let index = 0;
+
+    setInterval(() => {
+      slides[index].classList.remove('active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
+    }, 6000);
+  }
+</script>
+
+<!-- Nhạc nền sinh nhật -->
+<audio id="birthday-music" autoplay loop>
+  <source src="nhac_sinh_nhat.mp3" type="audio/mpeg" />
+  Trình duyệt của bạn không hỗ trợ âm thanh.
+</audio>
+
+</body>
+</html>
